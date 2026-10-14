@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tryal</title>
+<style>
+  body { font: 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #F5F3EE; color: #0A0A0A; text-align: center; padding: 64px 24px; margin: 0; }
+  img { width: 150px; height: auto; }
+  h1 { font-size: 26px; margin: 28px 0 8px; }
+  p { color: #555; margin: 0; }
+  a.btn { display: inline-block; margin-top: 24px; background: #E8291C; color: #fff; padding: 14px 28px; border-radius: 28px; text-decoration: none; font-weight: 700; }
+  [hidden] { display: none; }
+</style>
+</head>
+<body>
+<img src="/tryal-wordmark.png" alt="Tryal">
+<div id="invite" hidden>
+  <h1>Join me on Tryal</h1>
+  <p>Opening the app…</p>
+  <a class="btn" href="https://apps.apple.com/app/id6792157657">Get Tryal</a>
+</div>
+<div id="missing" hidden>
+  <h1>Page not found</h1>
+  <p><a href="/">Go to Tryal</a></p>
+</div>
+<script>
+  // Invite links are https://tryal.app/i/<token>. With the app installed (1.0.6+) iOS opens the app before this page
+  // loads; otherwise this page tries the app's own link (older builds), then stays here with the App Store button.
+  var m = /^\/i\/([0-9a-f]{32}\.[0-9]{1,6}\.[0-9a-f]{32})\/?$/.exec(location.pathname);
+  if (m) {
+    document.getElementById("invite").hidden = false;
+    document.title = "Join me on Tryal";
+    location.href = "rork-fgum9ff0goqjv4vh7u4xf://invite/" + m[1];
+  } else {
+    document.getElementById("missing").hidden = false;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "WH3N6PVX8Y.app.rork.fgum9ff0goqjv4vh7u4xf",
+        "appIDs": ["WH3N6PVX8Y.app.rork.fgum9ff0goqjv4vh7u4xf"],
+        "paths": ["/i/*"],
+        "components": [{ "/": "/i/*" }]
+      }
+    ]
+  }
+}
